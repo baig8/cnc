@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Cancer Gene Detection</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+<!--- uncomment this line
+  <style>
+  	body {background-image: url('../static/img/dna.jpg');    background-repeat: no-repeat; background-attachment: fixed; background-size:cover;}
+  </style>
+  --->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+	<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body text="black" style="background-color: coral">
+
+<!---            --------------------------------- ---->
+<!---
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">CGD Logo</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+-->
+<!--------------------------------------------->
+
+	<div class="login">
+		<!--Get input for predict the cancer-->
+		<center>
+			<form action="{{ url_for('predict')}}"method="post">
+
+				<h1 style="background-color:DodgerBlue;">Web Service For Cancer Gene Detection </h1>h2>  Enter Dna Report Values</h2>
+				<input type="text" name="radius" placeholder="radius" required="required" />
+				<input type="text" name="texture" placeholder="texture" required="required" />
+				<br>
+				<input type="text" name="perimeter" placeholder="perimeter" required="required" />
+				<input type="text" name="area" placeholder="area" required="required" />
+				<br>
+				<input type="text" name="smoothness" placeholder="smoothness" required="required" />
+				<input type="text" name="compactness" placeholder="compactness" required="required" />
+				<br>
+				<input type="text" name="concavity" placeholder="concavity" required="required" />
+				<input type="text" name="concave_points" placeholder="concave points" required="required" />
+				<br>
+				<input type="text" name="symmetry" placeholder="symmetry" required="required" />
+				<input type="text" name="fractal_dimension" placeholder="fractal dimension" required="required" />
+
+				<br>
+				<br>
+
+				<!-- show button-->
+				<div class="button_cont" align="center"><a class="button_css">
+
+					<button text="blue" style="color:#800080" type="submit" class="btn btn-primary btn-block btn-large"><strong><h4 style="color:#8FBC8F; border:2px #4682B4 ">CLICK TO PREDICT </h4></strong>
+						<h4 style="color:#8FBC8F; border:2px solid Tomato">Cancer if (1)</h4>
+						<h4 style="color:#8FBC8F; border:2px solid Tomato">No Cancer if (0)</h4>
+					</button></a>
+
+				</div>
+			</form>
+
+
+		</center> <!--Show predicted output using ML model-->
+		<div>
+			<center>
+				<h1 style="color:Red; border:2px solid Tomato">{{ prediction_text}}</h1>
+				<h2>
+					<p>Dataset used: <a href="https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+(Diagnostic)" style="color: orange;"> UC Irvine Machine Learning Repository</a></p>
+				</h2>
+
+		</ul>
+				<br>
+				<!-- Put this code anywhere in the body of your page where you want the badge to show up. -->
+<!---
+<div itemscope itemtype='http://schema.org/Person' class='fiverr-seller-widget' style='display: inline-block;'>
+     <a itemprop='url' href=https://www.fiverr.com/rayz_ab rel="nofollow" target="_blank" style='display: inline-block;'>
+        <div class='fiverr-seller-content' id='fiverr-seller-widget-content-8c4b4edd-670c-463a-8112-fa97f8b82993' itemprop='contentURL' style='display: none;'></div>
+        <div id='fiverr-widget-seller-data' style='display: none;'>
+            <div itemprop='name' >rayz_ab</div>
+            <div itemscope itemtype='http://schema.org/Organization'><span itemprop='name'>Fiverr</span></div>
+            <div itemprop='jobtitle'>Seller</div>
+            <div itemprop='description'></div>
+        </div>
+    </a>
+</div>
+-->
+<script id='fiverr-seller-widget-script-8c4b4edd-670c-463a-8112-fa97f8b82993' src='https://widgets.fiverr.com/api/v1/seller/rayz_ab?widget_id=8c4b4edd-670c-463a-8112-fa97f8b82993' data-config='{"category_name":"Programming \u0026 Tech"}' async='true' defer='true'></script>
+
+
+      </form>
+
+		</center>
+	</div >
+	</div>
+	</body>
+	</html>

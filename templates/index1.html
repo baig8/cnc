@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <title>Cancer Gene Detector</title>
+    <link rel="stylesheet" href="static/style1.css">
+  </head>
+  <body>
+    <header>
+      <h1>Cancer Detector Service</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#methodology">Methodology</a></li>
+        <li><a href="#prediction">Prediction</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section id="overview">
+        <h2>Overview</h2>
+        <p>In this project, we used machine learning algorithms to detect cancer in Patients using diagnostic dataset from the <a href="https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(diagnostic)">UCI machine learning repository</a>.</p>
+      </section>
+      <section id="methodology">
+        <h2>Methodology</h2>
+        <p>We trained and tested several different machine learning models using a diagnostic dataset and their corresponding labels indicating the presence or absence of cancer.</p>
+      </section>
+      <section id="prediction">
+        <h2>Prediction</h2>
+        <p>For successful prediction input the following values below to get Prediction Results </p>
+        	<div class="login">
+		<!--Get input for predict the cancer-->
+		<center>
+
+			<form action="{{ url_for('predict')}}"method="post">
+
+				<input type="text" name="radius" placeholder="radius" required="required" />
+				<input type="text" name="texture" placeholder="texture" required="required" />
+				<input type="text" name="perimeter" placeholder="perimeter" required="required" />
+                <br>
+				<input type="text" name="area" placeholder="area" required="required" />
+				<input type="text" name="smoothness" placeholder="smoothness" required="required" />
+				<input type="text" name="compactness" placeholder="compactness" required="required" />
+				<br>
+				<input type="text" name="concavity" placeholder="concavity" required="required" />
+				<input type="text" name="concave_points" placeholder="concave points" required="required" />
+				<input type="text" name="symmetry" placeholder="symmetry" required="required" />
+				<br>
+
+				<input type="text" name="fractal_dimension" placeholder="fractal dimension" required="required" />
+
+				<br>
+				<br>
+
+				<!-- show button-->
+				<div class="button_cont" align="center"><a class="button_css">
+
+					<button text="blue" style="color:#800080" type="submit" class="btn btn-primary btn-block btn-large"><strong><h4 style="color:#0049ff; border:2px #4682B4 ">CLICK TO PREDICT </h4></strong>
+					</button></a>
+
+				</div>
+			</form>
+          		</center> <!--Show predicted output using ML model-->
+            </div>
+          <center>
+        <div>
+				<h1 style="color:Red; border:2px solid Tomato">{{ prediction_text}}</h1>
+        </div>
+              </center>
+      </section>
+    </main>
+  </body>
+</html>
+
